@@ -69,6 +69,9 @@ button { font: inherit; cursor: pointer; }
 .eyebrow::before { content: ""; width: 28px; height: 3px; background: var(--red); border-radius: 2px; }
 .eyebrow--light { color: var(--white); }
 .section { padding: 110px 0; }
+/* Ao navegar por âncora, desconta parte do padding superior para o conteúdo
+   ficar logo abaixo do header (40px de respiro) em vez de 110px. */
+.section[id] { scroll-margin-top: -70px; }
 .section--dark { background: var(--black); color: var(--white); }
 .section--alt { background: var(--gray-100); }
 .section__head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
@@ -443,6 +446,7 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 640px) {
   .container { padding: 0 16px; }
   .section { padding: 80px 0; }
+  .section[id] { scroll-margin-top: -48px; }
   .section__head { margin-bottom: 40px; }
   .hero__actions .btn { width: 100%; }
   .hero__scroll { display: none; }
